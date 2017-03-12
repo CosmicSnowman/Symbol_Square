@@ -19,6 +19,7 @@ namespace Jake_Symbol_Square
             Console.WriteLine("What size?");
 
             int size = int.Parse(Console.ReadLine());
+            
 
 
             //How does a square work
@@ -157,24 +158,93 @@ namespace Jake_Symbol_Square
 
 
             //size will always be odd number.
-            int wholeNumber;
-            string word;
+            //  int wholeNumber;
+            //       string word;
 
-            double realNumber = 0.5f;
+            // double realNumber = 0.5f;
 
+            int offset = size - 1;
+            
+            //
             for (int row = 0; row < size / 2 + 1; row++)
             {
+                //Counter starting at 0. Stops when size 
                 for (int space = 0; space < size / 2 - row; space++)
                 {
                     Console.Write(" ");
                 }
-                for (int col = 0; col < size / 2 - 1 + (row * 2); col++)
+                
+                //
+                for (int col = 0; col < size - offset; col++)
                 {
                     Console.Write(symbol);
                 }
 
+                //
+                offset -= 2;
+
                 Console.WriteLine();
             }
+            /*
+                        int offset2 = size + 1;
+                        for (int row = size / 2; row > 0; row--)
+                        {
+                            for (int space = 0; space < size / 2 - row + 1; space++)
+                            {
+                                Console.Write(" ");
+                            }
+
+                            for (int col = size - 2;col > size - offset2; size++) 
+                                // 3; 3 > 5(add 1 each time) - (5 + 1); each time +1     -1, 0, 1, 2, 3
+
+
+                                // 5 - 6 Only true once? 
+                            {
+                                Console.Write(symbol);
+
+                            }
+
+                            Console.WriteLine();
+                            offset2 = 2;
+
+                        }
+
+
+                */
+
+
+          
+                                                                               //collumn = ********
+                                                                                          //row =     *
+                                                                                           //         *
+                                                                                          //          *
+
+
+            for (int row = size / 2; row > 0; row--)
+            {
+                for (int space = 0; space < size / 2 - 1; space ++) // ONly worry about front part
+                {
+                    Console.Write(" ");
+                }
+
+                for (int col = size / 2 + 1; col >= 1; col += -2)
+                    // 5/2 = 2; 2 = 1 = 3; 3 >= 2 - 2 = 0
+                {
+                    Console.Write(symbol);
+                }
+                Console.WriteLine();
+            }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
